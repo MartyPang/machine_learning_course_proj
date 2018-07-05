@@ -175,7 +175,7 @@ def resnet_v2(input_shape, depth, num_classes=20):
 
 
 # read data from disk
-directory = '/home/martypang/PyCharmProjects/machine_learning_proj/data/faces_4/'
+directory = 'C:/Users/redee/Documents/Projects/PyCharmProjects/machine_learning_proj/data/faces_4/'
 imgfiles = []
 imgfilenames = []
 
@@ -211,7 +211,7 @@ X_train, X_test, y_train, y_test = train_test_split(imglist, labels, test_size=0
 
 # Training parameters
 batch_size = 32
-epochs = 10
+epochs = 40
 num_classes = 20
 
 # Input image dimensions.
@@ -328,7 +328,7 @@ model.fit_generator(datagen.flow(np.asarray(X_train), np.asarray(y_train), batch
                     callbacks=callbacks)
 
 # Score trained model.
-scores = model.evaluate(X_test, y_test, verbose=1)
+scores = model.evaluate(np.asarray(X_test), np.asarray(y_test), verbose=1)
 print('Test loss:', scores[0])
 print('Test accuracy:', scores[1])
 
